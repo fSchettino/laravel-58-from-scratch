@@ -43,21 +43,21 @@ Route::view('about', 'about');
 });*/
 
 // Using a RESTful controller
-Route::get('customers', 'CustomersController@index');
-Route::get('customers/create', 'CustomersController@create');
-Route::post('customers', 'CustomersController@store');
+//Route::get('customers', 'CustomersController@index');
+//Route::get('customers/create', 'CustomersController@create');
+//Route::post('customers', 'CustomersController@store');
 // Using middleware to authorize customer detail view access
-Route::get('customers/{customer}', 'CustomersController@show')->middleware('can:view,customer');
+//Route::get('customers/{customer}', 'CustomersController@show')->middleware('can:view,customer');
 //Route::get('customers/{customer}', 'CustomersController@show');
-Route::get('customers/{customer}/edit', 'CustomersController@edit');
-Route::patch('customers/{customer}', 'CustomersController@update');
-Route::delete('customers/{customer}', 'CustomersController@destroy');
+//Route::get('customers/{customer}/edit', 'CustomersController@edit');
+//Route::patch('customers/{customer}', 'CustomersController@update');
+//Route::delete('customers/{customer}', 'CustomersController@destroy');
 
 // Using resourceful route with authorization restriction
 //Route::resource('customers', 'CustomersController');
 
 // Using authenticate middleware in order to restrict access of customers section
-//Route::resource('customers', 'CustomersController')->middleware('auth');
+Route::resource('customers', 'CustomersController')->middleware('auth');
 // Using custom middleware array
 //Route::view('about', 'about')->middleware(['custom', 'nextCustom']);
 

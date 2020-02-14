@@ -29,5 +29,13 @@
         <server name="MAIL_DRIVER" value="array"/>
         <server name="QUEUE_CONNECTION" value="sync"/>
         <server name="SESSION_DRIVER" value="array"/>
+
+        <!--Disable Telescope (if it's installed in the project)-->
+        <!--To execute tests Telescope must be disabled-->
+        <server name="TELESCOPE_ENABLED" value="false"/>
+
+        <!--Tells to phpunit to use specified mysql database each time runs tests-->
+        <server name="DB_CONNECTION" value="mysql"/>
+        <server name="DB_DATABASE" value="laravel-58-course-test"/>
     </php>
 </phpunit>
